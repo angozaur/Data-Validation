@@ -1,0 +1,7 @@
+.DS_Store
+/.idea
+clover.xml
+/vendor
+/data-validation
+*.cache
+.phpunit.result.cache

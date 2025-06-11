@@ -1,0 +1,71 @@
+{
+  "name": "yorcreative/data-validation",
+  "description": "A lightweight and high-performance PHP validation library designed for enterprise-grade applications. It features zero dependencies, comprehensive test coverage, and a developer-friendly API—enabling teams to build scalable and secure systems with confidence.",
+  "type": "library",
+  "license": "MIT",
+  "keywords": [
+    "php",
+    "validation",
+    "data-validation",
+    "high-performance",
+    "data-processing",
+    "lightweight",
+    "wildcard",
+    "nested-data",
+    "api",
+    "memory-efficient",
+    "extensible",
+    "custom-rules",
+    "psr-12",
+    "psr-4",
+    "security",
+    "open-source  ",
+    "no-dependencies",
+    "testing",
+    "enterprise",
+    "validator",
+    "benchmarks"
+  ],
+  "require": {
+    "php": "^8.3|^8.4"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^9.0|^10.0",
+    "phpunit/phpunit": "^10.0|^11.5.3",
+    "squizlabs/php_codesniffer": "^3.8.0",
+    "friendsofphp/php-cs-fixer": "^3.44.2",
+    "mockery/mockery": "^1.0",
+    "illuminate/validation": "^10.0 || ^11.0",
+    "symfony/translation": "^6.0 || ^7.0",
+    "illuminate/filesystem": "^10.0 || ^11.0",
+    "illuminate/translation": "^10.0 || ^11.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "YorCreative\\DataValidation\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "YorCreative\\DataValidation\\Tests\\": "tests/",
+      "YorCreative\\DataValidation\\Benchmarks\\": "benchmarks/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": ["YorCreative\\DataValidation\\DataValidationServiceProvider"]
+    }
+  },
+  "scripts": {
+    "benchmark-illuminate": "php ./benchmarks/illuminate.php",
+    "benchmark-data-validation": "php ./benchmarks/data_validation.php",
+    "benchmark-all": "php ./benchmarks/run_all_benchmarks.php",
+    "test": "php ./vendor/bin/phpunit --testdox",
+    "lint": "php ./vendor/bin/phpcbf --standard=PSR12 ./src",
+    "coverage": "php ./vendor/bin/phpunit --testdox --coverage-text",
+    "coverage-html": "php ./vendor/bin/phpunit --testdox --coverage-html data-validation"
+  },
+  "config": {
+    "process-timeout": 0
+  }
+}
